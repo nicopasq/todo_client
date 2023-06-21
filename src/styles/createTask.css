@@ -1,0 +1,9 @@
+#createTaskBar{
+    height: 7vh;
+    background-color: rgba(128, 128, 128, 0.546);
+    position: relative;
+    top: 10vh;
+}
+#gridContainer{
+    margin: 5px;
+}

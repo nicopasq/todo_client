@@ -2,15 +2,15 @@
 // Each task will be able to be completed or deleted
 // Each tasks will be editable 
 // Tasks come from fetch request to API
-import { Sheet } from "@mui/joy";
 import React from "react";
+import '../styles/taskBlock.css'
 
 function TaskBlock({taskList}){
-    const tasks = taskList.map(task => task)
+    // const tasks = taskList.map(task => task)
     return (
-        <Sheet color="primary" variant="soft">
+        <div id="taskBlock">
 
-        </Sheet>
+        </div>
         )
     }
     

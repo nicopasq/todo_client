@@ -1,11 +1,13 @@
 import React from "react";
 import TaskBlock from "./TaskBlock";
-import { Container } from "@mui/joy";
+import { Container, Typography } from "@mui/joy";
+import CreateTask from "./CreateTask";
 
 function App (){
     return (
         <Container>
-            <h2>Hello World</h2>
+            <Typography level="h1">Tasks</Typography>
+            <CreateTask/>
             <TaskBlock taskList={['Tasks will come from API']}/>
         </Container>
     )
