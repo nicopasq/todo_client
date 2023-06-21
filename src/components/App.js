@@ -1,8 +1,13 @@
 import React from "react";
+import TaskBlock from "./TaskBlock";
+import { Container } from "@mui/joy";
 
 function App (){
     return (
-        <h2>Hello World</h2>
+        <Container>
+            <h2>Hello World</h2>
+            <TaskBlock taskList={['Tasks will come from API']}/>
+        </Container>
     )
 }
 
