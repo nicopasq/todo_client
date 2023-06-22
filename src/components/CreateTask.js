@@ -5,6 +5,8 @@ import '../styles/createTask.css'
 function CreateTask(){
     return (
         <div id="createTaskBar">
+            <form>
+
             <Grid id="gridContainer" container spacing={3} sx={{flexGrow: 1}}>
                 <Grid xs={4}>
                     <Textarea placeholder="Description of Task" sx={{bgcolor:"#DBC950"}}/>
@@ -15,11 +17,12 @@ function CreateTask(){
                 </Grid>
 
                 <Grid xs={4}>
-                    <Button variant="solid">Add Task</Button>
+                    <Button variant="solid" type="submit">Add Task</Button>
                 </Grid>
             
             </Grid>
 
+            </form>
         </div>
     )
 }

@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TaskBlock from "./TaskBlock";
 import { Container, Typography } from "@mui/joy";
 import CreateTask from "./CreateTask";
 
 function App (){
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/tasks")
+        .then (resp => resp.json())
+        .then (data => setTasks(data))
+    }, [])
+
     return (
         <Container>
-            <Typography level="h1">Tasks</Typography>
+            <Typography level="h1">To-Do App</Typography>
             <CreateTask/>
-            <TaskBlock taskList={['Tasks will come from API']}/>
+            <TaskBlock taskList={tasks}/>
         </Container>
     )
 }
