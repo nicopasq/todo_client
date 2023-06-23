@@ -13,7 +13,6 @@ function App() {
   }, []);
 
   function addNewTask(newTask){
-console.log("new task from APP:", newTask)
     setTasks(tasks => [...tasks, newTask])
   }
 

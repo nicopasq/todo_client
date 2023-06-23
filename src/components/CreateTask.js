@@ -23,7 +23,8 @@ function CreateTask({addNewTask}) {
         .then(data => {
             addNewTask(data)
             console.log('data persisted!', data)
-        })
+          })
+          setNewTask({...newTask, description:'', category:''})
     }
 
     function handleChange(e){
