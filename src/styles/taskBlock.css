@@ -1,16 +1,23 @@
 #taskBlock{
-    height: 40vh;
-    background-color: rgba(128, 128, 128, 0.836);
+    background: rgba(0, 0, 0, 0.79);
+    border: 1px solid rgb(70, 70, 70);
+    height: 36.5vh;
     position: relative;
     top: 15vh;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 .task{
-    background-color: rgba(128, 128, 128, 0.248);
-    margin: 5px;
-    width: 103.5%;
+    background: rgba(0, 0, 0, 0.79);
+    border-bottom: solid rgb(219, 186, 0) 2px;
+    margin: -5px;
+    width: 105%;
+    height: auto;
     position: relative;
-    top: -1.55vh;
+    bottom: 1.55vh;
     right: 4.7vh;
+}
+
+::-webkit-scrollbar{
+    width: 0;
 }

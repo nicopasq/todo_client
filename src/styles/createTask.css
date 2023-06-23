@@ -1,9 +1,12 @@
 #createTaskBar{
+    background: rgba(0, 0, 0, 0.79);
+    border: 1px solid rgb(70, 70, 70);
     height: 7vh;
-    background-color: rgba(128, 128, 128, 0.546);
     position: relative;
-    top: 10vh;
+    top: 14vh;
 }
 #gridContainer{
     margin: 5px;
+    position: relative;
+    bottom: .25vh;
 }
