@@ -2,7 +2,7 @@ import { Button, Grid, Textarea } from "@mui/joy";
 import React, { useState } from "react";
 import "../styles/createTask.css";
 
-function CreateTask() {
+function CreateTask({addNewTask}) {
     const [newTask, setNewTask] = useState({
         description:'',
         category:'',
@@ -20,7 +20,10 @@ function CreateTask() {
             body: JSON.stringify(newTask)
         })
         .then(r => r.json())
-        .then(data => console.log('data persisted!', newTask))
+        .then(data => {
+            addNewTask(data)
+            console.log('data persisted!', data)
+        })
     }
 
     function handleChange(e){

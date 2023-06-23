@@ -12,10 +12,15 @@ function App() {
       .then((data) => setTasks(data));
   }, []);
 
+  function addNewTask(newTask){
+console.log("new task from APP:", newTask)
+    setTasks(tasks => [...tasks, newTask])
+  }
+
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
-      <CreateTask />
+      <CreateTask addNewTask={addNewTask}/>
       <TaskBlock taskList={tasks} />
     </Container>
   );
