@@ -1,0 +1,20 @@
+Tasks - 
+    Utilize CRUD (Create, Read, Update, Delete)
+    
+    Create - 
+        make the form in CreateTask.js a controlled form
+        Use the data from the form to create a fetch POST request that will create a task in the db
+        Make sure that the data is persisted to the db and the tasks are updated in the browser
+
+    Read - 
+        Create a search bar to search for certain tasks/categories of tasks
+        Display the results in the taskBlock
+
+    Update -
+        Each task will be clickable
+        When a task is clicked, it will open a form to update the task
+        Once submitted, the data from the form will be persisted to db, and the task will update without refreshing the page
+
+    Delete -
+        Click on the delete button to delete a task
+        Display a message that the task has been succesfuly deleted

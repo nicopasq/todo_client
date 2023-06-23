@@ -1,30 +1,43 @@
 import { Button, Grid, Textarea } from "@mui/joy";
-import React from "react";
-import '../styles/createTask.css'
+import React, { useState } from "react";
+import "../styles/createTask.css";
 
-function CreateTask(){
-    return (
-        <div id="createTaskBar">
-            <form>
+function CreateTask() {
+    const [desc, setDesc] = useState('')
+    const [cat, setCat] = useState('')
+    function handleSubmit(e){
+        e.preventDefault()
+    }
 
-            <Grid id="gridContainer" container spacing={3} sx={{flexGrow: 1}}>
-                <Grid xs={4}>
-                    <Textarea placeholder="Description of Task" sx={{bgcolor:"#DBC950"}}/>
-                </Grid>
-
-                <Grid xs={4}>
-                    <Textarea placeholder="Category" sx={{bgcolor:"#DBC950"}}/>
-                </Grid>
-
-                <Grid xs={4}>
-                    <Button variant="solid" type="submit">Add Task</Button>
-                </Grid>
-            
-            </Grid>
-
-            </form>
-        </div>
-    )
+  return (
+    <div id="createTaskBar">
+      <form onSubmit={handleSubmit}>
+        <Grid id="gridContainer" container spacing={3} sx={{ flexGrow: 1 }}>
+          <Grid xs={4}>
+            <Textarea
+            className="textInput"
+            placeholder="Description of Task"
+            onChange={e => setDesc(e.target.value)}
+            value={desc}
+            />
+          </Grid>
+          <Grid xs={4}>
+            <Textarea
+            className="textInput"
+            placeholder="Category" 
+            onChange={e => setCat(e.target.value)}
+            value={cat}
+            />
+          </Grid>
+          <Grid xs={4}>
+            <Button variant="solid" type="submit">
+              Add Task
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
+    </div>
+  );
 }
 
 export default CreateTask;

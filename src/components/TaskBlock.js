@@ -26,12 +26,12 @@ function TaskBlock({ taskList }) {
           </Typography>
         </Grid>
         <Grid xs={2}>
-            <div style={{float:"right", marginLeft:"46px"}}>
-          <Checkbox id="checkBox" checked={task.completed} />
-          <Button variant="plain" sx={{ margin: "10px", top: "-0.5vh" }}>
-            Delete
-          </Button>
-            </div>
+          <div style={{ float: "right", marginLeft: "46px" }}>
+            <Checkbox id="checkBox" checked={task.completed} />
+            <Button variant="plain" sx={{ margin: "10px", top: "-0.5vh" }}>
+              Delete
+            </Button>
+          </div>
         </Grid>
       </Grid>
     </li>
