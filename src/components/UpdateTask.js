@@ -8,22 +8,20 @@ return (
     <form id="updateTaskForm">
     <Typography id="updatingCurrentTask" level="h5" variant="solid">Updating "Some Task"</Typography>
         <Grid id="updateTaskGrid" container spacing={2} sx={{ flexGrow: 1 }}>
-          <Grid xs={8}>
+          <Grid xs={8}> 
+          <Typography level="h5">New Description</Typography>
             <Textarea
             className="updateTaskInput"
             placeholder="New description of Task"
-            // onChange={e => handleChange(e)}
-            // value={description}
-            // name="description"
+            value="This task has been updated"
             />
           </Grid>
           <Grid xs={8}>
+          <Typography level="h5">Category</Typography>
             <Textarea
             className="updateTaskInput"
             placeholder="Category" 
-            // onChange={e => handleChange(e)}
-            // value={category}
-            // name="category"
+            value="Updated Task"
             />
           </Grid>
           <Grid xs={8}>

@@ -10,7 +10,7 @@
     background-color: rgb(216, 27, 27);
     border-radius: 10px;
     border: 2px solid black;
-    height: 25vh;
+    height: 30vh;
     width: 20vw;
     position: relative;
     top: 40vh;
@@ -18,7 +18,7 @@
 }
 #updateTaskGrid{
     position: relative;
-    top: 40px;
+    top: 20px;
     left: 60px;
 }
 #updatingCurrentTask{
