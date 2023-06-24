@@ -17,15 +17,19 @@ function App() {
     setTasks(tasks => [...tasks, newTask])
   }
 
-  function openUpdateTask(){
-    setDisplayUpdateTask(!displayUpdateTask)
+  function toggleUpdateTask(){
+    if(displayUpdateTask ==="none"){
+      setDisplayUpdateTask("block")
+    } else if (displayUpdateTask ==="block"){
+      setDisplayUpdateTask("none")
+    }
   }
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
-      <TaskBlock taskList={tasks} openUpdateTask={openUpdateTask}/>
-      <UpdateTask display={displayUpdateTask}/>
+      <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask}/>
+      <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask}/>
     </Container>
   );
 }
