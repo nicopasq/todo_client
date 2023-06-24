@@ -7,7 +7,7 @@ import UpdateTask from "./UpdateTask";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [displayUpdateTask, setDisplayUpdateTask] = useState("none");
-  const [taskToUpdate, setTaskToUpdate] = useState({});
+  const [taskId, setTaskId] = useState('');
   useEffect(() => {
     fetch("http://localhost:3000/tasks")
       .then((resp) => resp.json())
@@ -27,7 +27,7 @@ function App() {
   }
 
   function idToUpdateTask(id){
-    setTaskToUpdate(tasks[id])
+    setTaskId(id + 1)
   }
 
   return (
@@ -35,7 +35,7 @@ function App() {
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
       <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask}/>
-      <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} task={taskToUpdate}/>
+      <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId}/>
     </Container>
   );
 }

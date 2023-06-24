@@ -2,11 +2,23 @@ import { Button, Grid, Textarea, Typography } from "@mui/joy";
 import React from "react";
 import '../styles/updateTask.css'
 
-function UpdateTask({display, toggleUpdateTask, task}){
-    console.log("Task to update", task)
+function UpdateTask({display, toggleUpdateTask, taskId}){
     function handleSubmit(e){
         e.preventDefault()
-        toggleUpdateTask()
+        fetch(`http://localhost:3000/tasks/${taskId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                description:e.target.description.value,
+                category:e.target.category.value
+            })
+        })
+        .then(r => r.json())
+        .then(data => {
+            toggleUpdateTask()
+        })
     }
 
 return (
