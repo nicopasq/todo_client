@@ -2,9 +2,9 @@ import React from "react";
 import { Button, Checkbox, Grid, Typography } from "@mui/joy";
 import "../styles/taskBlock.css";
 
-function Task ({task, id}){
+function Task ({task, id, openUpdateTask}){
     return (
-    <li key={id} className="task">
+    <li onClick={openUpdateTask} key={id} className="task">
       <Grid
         id="gridContainer"
         container

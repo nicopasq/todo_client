@@ -6,7 +6,7 @@ import UpdateTask from "./UpdateTask";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-
+  const [displayUpdateTask, setDisplayUpdateTask] = useState("none");
   useEffect(() => {
     fetch("http://localhost:3000/tasks")
       .then((resp) => resp.json())
@@ -17,12 +17,15 @@ function App() {
     setTasks(tasks => [...tasks, newTask])
   }
 
+  function openUpdateTask(){
+    setDisplayUpdateTask(!displayUpdateTask)
+  }
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
-      <TaskBlock taskList={tasks} />
-      <UpdateTask/>
+      <TaskBlock taskList={tasks} openUpdateTask={openUpdateTask}/>
+      <UpdateTask display={displayUpdateTask}/>
     </Container>
   );
 }

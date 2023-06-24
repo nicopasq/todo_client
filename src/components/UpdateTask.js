@@ -2,9 +2,9 @@ import { Button, Grid, Textarea, Typography } from "@mui/joy";
 import React from "react";
 import '../styles/updateTask.css'
 
-function UpdateTask({task}){
+function UpdateTask({display}){
 return (
-    <div id="updateTaskBg">
+    <div id="updateTaskBg" style={{display:display}}>
     <form id="updateTaskForm">
     <Typography id="updatingCurrentTask" level="h5" variant="solid">Updating "Some Task"</Typography>
         <Grid id="updateTaskGrid" container spacing={2} sx={{ flexGrow: 1 }}>
