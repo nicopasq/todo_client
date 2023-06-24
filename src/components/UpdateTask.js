@@ -2,8 +2,8 @@ import { Button, Grid, Textarea, Typography } from "@mui/joy";
 import React from "react";
 import '../styles/updateTask.css'
 
-function UpdateTask({display, toggleUpdateTask}){
-    
+function UpdateTask({display, toggleUpdateTask, task}){
+    console.log("Task to update", task)
     function handleSubmit(e){
         e.preventDefault()
         toggleUpdateTask()
@@ -23,6 +23,7 @@ return (
             className="updateTaskInput"
             placeholder="New description of Task"
             value="This task has been updated"
+            name="description"
             />
           </Grid>
           <Grid xs={8}>
@@ -31,6 +32,7 @@ return (
             className="updateTaskInput"
             placeholder="Category" 
             value="Updated Task"
+            name="category"
             />
           </Grid>
           <Grid xs={8}>
