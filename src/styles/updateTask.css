@@ -1,0 +1,31 @@
+#updateTaskBg{
+    background-color: rgba(0, 0, 255, 0.269);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: -50vh;
+    right: 40vh;
+}
+#updateTaskForm{
+    background-color: rgb(216, 27, 27);
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 25vh;
+    width: 20vw;
+    position: relative;
+    top: 40vh;
+    left: 35vw;
+}
+#updateTaskGrid{
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+#updatingCurrentTask{
+    width:19.3vw;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+    left: 5px;
+}
