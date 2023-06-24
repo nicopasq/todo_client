@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TaskBlock from "./TaskBlock";
 import { Container, Typography } from "@mui/joy";
 import CreateTask from "./CreateTask";
+import UpdateTask from "./UpdateTask";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -21,6 +22,7 @@ function App() {
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
       <TaskBlock taskList={tasks} />
+      <UpdateTask/>
     </Container>
   );
 }
