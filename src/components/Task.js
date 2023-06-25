@@ -3,6 +3,16 @@ import { Button, Checkbox, Grid, Typography } from "@mui/joy";
 import "../styles/taskBlock.css";
 
 function Task ({task, id, toggleUpdateTask, idToUpdateTask}){
+
+  function deleteTask(id){
+    fetch(`http://localhost:3000/tasks/${id}`, {
+      method:"DELETE",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+  }
+
     return (
     <li key={id} className="task">
       <Grid
@@ -23,7 +33,7 @@ function Task ({task, id, toggleUpdateTask, idToUpdateTask}){
         </Grid>
         <Grid xs={2}>
           <div style={{ float: "right", marginLeft: "46px" }}>
-            <Button variant="solid" sx={{ margin: "10px", top: "-0.5vh" }} className="taskData">
+            <Button onClick={e => deleteTask(task.id)} variant="solid" sx={{ margin: "10px", top: "-0.5vh" }} className="taskData">
                 Complete Task!
             </Button>
           </div>
