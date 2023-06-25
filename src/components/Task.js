@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Checkbox, Grid, Typography } from "@mui/joy";
 import "../styles/taskBlock.css";
 
-function Task ({task, id, toggleUpdateTask, idToUpdateTask}){
+function Task ({task, id, toggleUpdateTask, idToUpdateTask, removeFromTaskList}){
 
   function deleteTask(id){
     fetch(`http://localhost:3000/tasks/${id}`, {
@@ -11,6 +11,7 @@ function Task ({task, id, toggleUpdateTask, idToUpdateTask}){
         "Content-Type":"application/json"
       }
     })
+    .then(removeFromTaskList(id))
   }
 
     return (

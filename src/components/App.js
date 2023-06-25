@@ -34,11 +34,16 @@ function App() {
     const updatedTasks = tasks.map(task => task.id === newTask.id ? task = newTask : task)
     setTasks(updatedTasks)
   }
+
+  function removeFromTaskList(id){
+    const updatedTasks = tasks.filter(task => task.id !== id)
+    setTasks(updatedTasks)
+  }
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
-      <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask}/>
+      <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask} removeFromTaskList={removeFromTaskList}/>
       <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId} updateTaskList={updateTaskList}/>
     </Container>
   );
