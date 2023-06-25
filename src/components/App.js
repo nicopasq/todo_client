@@ -30,12 +30,16 @@ function App() {
     setTaskId(id + 1)
   }
 
+  function updateTaskList(newTask){
+    const updatedTasks = tasks.map(task => task.id === newTask.id ? task = newTask : task)
+    setTasks(updatedTasks)
+  }
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
       <CreateTask addNewTask={addNewTask}/>
       <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask}/>
-      <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId}/>
+      <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId} updateTaskList={updateTaskList}/>
     </Container>
   );
 }

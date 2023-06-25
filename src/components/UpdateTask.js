@@ -2,7 +2,7 @@ import { Button, Grid, Textarea, Typography } from "@mui/joy";
 import React from "react";
 import '../styles/updateTask.css'
 
-function UpdateTask({display, toggleUpdateTask, taskId}){
+function UpdateTask({display, toggleUpdateTask, taskId, updateTaskList}){
     function handleSubmit(e){
         e.preventDefault()
         fetch(`http://localhost:3000/tasks/${taskId}`, {
@@ -18,6 +18,7 @@ function UpdateTask({display, toggleUpdateTask, taskId}){
         .then(r => r.json())
         .then(data => {
             toggleUpdateTask()
+            updateTaskList(data)
         })
     }
 
