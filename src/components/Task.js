@@ -4,30 +4,27 @@ import "../styles/taskBlock.css";
 
 function Task ({task, id, toggleUpdateTask, idToUpdateTask}){
     return (
-    <li onClick={e => [toggleUpdateTask(), idToUpdateTask(id)]} key={id} className="task">
+    <li key={id} className="task">
       <Grid
         id="gridContainer"
         container
         spacing={4}
         sx={{ flexGrow: 1, width: "100%" }}
       >
-        <Grid xs={4}>
-          <Typography color="warning" id="desc" level="h2">
+        <Grid onClick={e => [toggleUpdateTask(), idToUpdateTask(id)]}  xs={4}>
+          <Typography color="warning" className="taskData" level="h2">
             {task.description}
           </Typography>
         </Grid>
         <Grid xs={4}>
-          <Typography color="info" id="category" level="h2">
+          <Typography onClick={e => [toggleUpdateTask(), idToUpdateTask(id)]} sx={{borderRight:"1px solid grey", height:"100%"}} color="info" className="taskData" level="h2">
             {task.category}
           </Typography>
         </Grid>
-        <Grid xs={4}>
+        <Grid xs={2}>
           <div style={{ float: "right", marginLeft: "46px" }}>
-            <Button variant="solid" sx={{ margin: "10px", top: "-0.5vh" }}>
+            <Button variant="solid" sx={{ margin: "10px", top: "-0.5vh" }} className="taskData">
                 Complete Task!
-            </Button>
-            <Button variant="solid" sx={{ margin: "10px", top: "-0.5vh" }}>
-              Delete
             </Button>
           </div>
         </Grid>

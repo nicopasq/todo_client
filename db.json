@@ -2,8 +2,8 @@
   "tasks": [
     {
       "id": 1,
-      "description": "This task has been updated",
-      "category": "Updated Task",
+      "description": "Task 1",
+      "category": "Cat 1",
       "completed": false
     },
     {
@@ -47,12 +47,6 @@
       "category": "DELETE ME",
       "completed": false,
       "id": 8
-    },
-    {
-      "description": "",
-      "category": "",
-      "completed": false,
-      "id": 9
     }
   ]
 }
