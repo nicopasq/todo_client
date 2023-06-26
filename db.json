@@ -1,52 +1,40 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "description": "Task 1",
-      "category": "Cat 1",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "description": "Task 2",
-      "category": "Cat 2",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "description": "Task 3",
-      "category": "Cat 3",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "description": "Task 4",
-      "category": "Cat 4",
-      "completed": false
-    },
-    {
-      "id": 5,
-      "description": "Task 5",
-      "category": "Cat 5",
-      "completed": false
-    },
-    {
-      "description": "Learn Javascript",
-      "category": "Check Me",
+      "description": "test ",
+      "category": "shopping\n",
       "completed": false,
-      "id": 6
+      "id": 1
     },
     {
-      "description": "SEARCH FOR ME",
+      "description": "test ",
+      "category": "chores\n\n",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "description": "test ",
+      "category": "homework",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "description": "test",
       "category": "code",
       "completed": false,
-      "id": 7
+      "id": 4
     },
     {
-      "description": "OOPS this one was an accident",
-      "category": "DELETE ME",
+      "description": "test ",
+      "category": "code",
       "completed": false,
-      "id": 8
+      "id": 5
+    },
+    {
+      "description": "test ",
+      "category": "shopping",
+      "completed": false,
+      "id": 6
     }
   ]
 }

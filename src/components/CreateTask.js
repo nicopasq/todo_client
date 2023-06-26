@@ -1,6 +1,7 @@
 import { Button, Grid, Textarea } from "@mui/joy";
 import React, { useState } from "react";
 import "../styles/createTask.css";
+import SearchCategories from "./SearchCategories";
 
 function CreateTask({addNewTask}) {
     const [newTask, setNewTask] = useState({
@@ -34,7 +35,7 @@ function CreateTask({addNewTask}) {
   return (
     <div id="createTaskBar">
       <form onSubmit={handleSubmit}>
-        <Grid id="gridContainer" container spacing={3} sx={{ flexGrow: 1 }}>
+        <Grid id="gridContainer" container spacing={4} sx={{ flexGrow: 1 }}>
           <Grid xs={4}>
             <Textarea
             className="textInput"
@@ -53,10 +54,13 @@ function CreateTask({addNewTask}) {
             name="category"
             />
           </Grid>
-          <Grid xs={4}>
+          <Grid xs={2}>
             <Button variant="solid" type="submit">
               Add Task
             </Button>
+          </Grid>
+          <Grid xs={2}>
+            <SearchCategories/>
           </Grid>
         </Grid>
       </form>
