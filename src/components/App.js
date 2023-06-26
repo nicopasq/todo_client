@@ -8,6 +8,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [displayUpdateTask, setDisplayUpdateTask] = useState("none");
   const [taskId, setTaskId] = useState('');
+  const allCategories = tasks.map(task => task.category.split("\n")[0]);
+  const uniqueCategories = [...new Set(allCategories)];
+
   useEffect(() => {
     fetch("http://localhost:3000/tasks")
       .then((resp) => resp.json())
@@ -39,10 +42,11 @@ function App() {
     const updatedTasks = tasks.filter(task => task.id !== id)
     setTasks(updatedTasks)
   }
+
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
-      <CreateTask addNewTask={addNewTask}/>
+      <CreateTask categories={uniqueCategories} addNewTask={addNewTask}/>
       <TaskBlock taskList={tasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask} removeFromTaskList={removeFromTaskList}/>
       <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId} updateTaskList={updateTaskList}/>
     </Container>

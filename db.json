@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "description": "test ",
-      "category": "homework",
-      "completed": false,
-      "id": 3
-    },
-    {
       "description": "test",
       "category": "code",
       "completed": false,
@@ -29,12 +23,6 @@
       "category": "code",
       "completed": false,
       "id": 5
-    },
-    {
-      "description": "test ",
-      "category": "shopping",
-      "completed": false,
-      "id": 6
     }
   ]
 }

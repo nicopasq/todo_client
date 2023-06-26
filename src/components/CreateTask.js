@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import "../styles/createTask.css";
 import SearchCategories from "./SearchCategories";
 
-function CreateTask({addNewTask}) {
+function CreateTask({addNewTask, categories}) {
     const [newTask, setNewTask] = useState({
         description:'',
         category:'',
         completed:false
-    })
-    const {category, description} = newTask
+    });
+    const {category, description} = newTask;
 
     function handleSubmit(e){
-        e.preventDefault()
+        e.preventDefault();
         fetch("http://localhost:3000/tasks", {
             method: "POST",
             headers:{
@@ -24,12 +24,12 @@ function CreateTask({addNewTask}) {
         .then(data => {
             addNewTask(data)
             console.log('data persisted!', data)
-          })
-          setNewTask({...newTask, description:'', category:''})
+          });
+          setNewTask({...newTask, description:'', category:''});
     }
 
     function handleChange(e){
-        setNewTask({...newTask, [e.target.name]: e.target.value})
+        setNewTask({...newTask, [e.target.name]: e.target.value});
     }
 
   return (
@@ -60,7 +60,7 @@ function CreateTask({addNewTask}) {
             </Button>
           </Grid>
           <Grid xs={2}>
-            <SearchCategories/>
+            <SearchCategories categories={categories}/>
           </Grid>
         </Grid>
       </form>
