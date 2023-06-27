@@ -7,7 +7,7 @@ import "../styles/taskBlock.css";
 import Task from "./Task";
 
 function TaskBlock({ taskList, toggleUpdateTask, idToUpdateTask, removeFromTaskList }) {
-  const tasks = taskList.map((task, id) => <Task key={id} task={task} id={id} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask} removeFromTaskList={removeFromTaskList}/>);
+  const tasks = taskList.map((task) => <Task key={task.id} task={task} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask} removeFromTaskList={removeFromTaskList}/>);
   return (
     <div id="taskBlock">
       <ul style={{ listStyleType: "none" }}>{tasks}</ul>

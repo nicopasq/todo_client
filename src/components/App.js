@@ -22,24 +22,25 @@ function App() {
     setTasks(tasks => [...tasks, newTask])
   }
 
-  function toggleUpdateTask(){
+  function toggleUpdateTask(taskID){
     if(displayUpdateTask ==="none"){
       setDisplayUpdateTask("block")
     } else if (displayUpdateTask ==="block"){
       setDisplayUpdateTask("none")
     }
+    setTaskId(taskID);
   }
-
-  function idToUpdateTask(id){
-    setTaskId(id + 1)
-  }
+console.log("TASKID:",taskId)
 
   function updateTaskList(newTask){
-    const updatedTasks = tasks.map(task => task.id === newTask.id ? task = newTask : task)
-    setTasks(updatedTasks)
+    const updatedTasks = tasks.map(task => task.id === newTask.id ? task = newTask : task);
+    setTasks(updatedTasks);
+
+    const updatedFilter = filterByCat.filter(task => task.category !== newTask.category && task.id !== newTask.id)
+    setFilterByCat(updatedFilter)
   }
 
-  function removeFromTaskList(id, category){
+  function removeFromTaskList(id){
     const updatedTasks = tasks.filter(task => task.id !== id)
     const updatedFilter = filterByCat.filter(category => category.id !== id)
     setFilterByCat(updatedFilter)
@@ -55,8 +56,8 @@ function App() {
   return (
     <Container>
       <Typography level="h1">To-Do App</Typography>
-      <CreateTask categories={uniqueCategories} addNewTask={addNewTask} filterTasks={filterTasks}/>
-      <TaskBlock taskList={displayTasks} toggleUpdateTask={toggleUpdateTask} idToUpdateTask={idToUpdateTask} removeFromTaskList={removeFromTaskList}/>
+      <CreateTask categories={uniqueCategories} addNewTask={addNewTask} filterTasks={filterTasks} />
+      <TaskBlock taskList={displayTasks} toggleUpdateTask={toggleUpdateTask} removeFromTaskList={removeFromTaskList}/>
       <UpdateTask display={displayUpdateTask} toggleUpdateTask={toggleUpdateTask} taskId={taskId} updateTaskList={updateTaskList}/>
     </Container>
   );
