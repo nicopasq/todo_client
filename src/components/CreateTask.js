@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../styles/createTask.css";
 import SearchCategories from "./SearchCategories";
 
-function CreateTask({addNewTask, categories}) {
+function CreateTask({addNewTask, categories, filterTasks}) {
     const [newTask, setNewTask] = useState({
         description:'',
         category:'',
@@ -60,7 +60,7 @@ function CreateTask({addNewTask, categories}) {
             </Button>
           </Grid>
           <Grid xs={2}>
-            <SearchCategories categories={categories}/>
+            <SearchCategories categories={categories} filterTasks={filterTasks}/>
           </Grid>
         </Grid>
       </form>

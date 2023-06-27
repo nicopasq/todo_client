@@ -1,15 +1,26 @@
 import { Option, Select } from "@mui/joy";
 import React from "react";
 
-function SearchCategories({categories}){
-    const categoryList = categories.map((category, id) => (
-        <Option key={id} value={category}>{category}</Option>
-    ));
+function SearchCategories({categories, filterTasks}){
 
-    console.log(categoryList)
+    function handleClick(e){
+        const categoryName = e.target.innerText;
+        filterTasks(categoryName);
+    }
+
+    const categoryList = categories.map((category, id) => (
+        <Option 
+        key={id} 
+        value={category}
+        onClick={handleClick}
+        >
+            {category}
+        </Option>
+    ));
+    categoryList.unshift(<Option onClick={handleClick} value="Select Category" key={':r1:'}>Select Category</Option>)  
+
     return (
         <Select placeholder="Search Categories" sx={{width:"10vw", right:"3vw"}}>
-            <Option value="Select Category" id={0}>Select Category</Option>
             {categoryList}
         </Select>
     )
